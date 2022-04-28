@@ -38,6 +38,7 @@
   ['pie', 'doughnut', 'polarArea', 'bar'].forEach(function (t) {
     SUPPORTED_TYPES[t] = true;
   });
+  var helpers = Chart.helpers;
 
   function Label() {
     this.renderToDataset = this.renderToDataset.bind(this);
@@ -97,7 +98,7 @@
     }
     var ctx = this.ctx;
     ctx.save();
-    ctx.font = Chart.helpers.fontString(this.options.fontSize, this.options.fontStyle, this.options.fontFamily);
+    ctx.font = helpers.fontString(this.options.fontSize, this.options.fontStyle, this.options.fontFamily);
     var renderInfo = this.getRenderInfo(element, label);
     if (!this.drawable(element, label, renderInfo)) {
       ctx.restore();
